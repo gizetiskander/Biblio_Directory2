@@ -21,7 +21,7 @@ namespace Biblio_Directory2
     /// </summary>
     public partial class Book : Page
     {
-        private List<BiblioResources> _bibliodata;
+        private List<BiblioResources> _bibliodataList;
         public Book()
         {
             InitializeComponent();
@@ -29,13 +29,13 @@ namespace Biblio_Directory2
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            _bibliodata = new List<BiblioResources>()
+            _bibliodataList = new List<BiblioResources>()
             {
-                new BiblioResources(){Name="AnnaKarenina"},
+                new BiblioResources(){Name="AnnaKarenina", Author = "LevTolstoy"},
                 new BiblioResources(){Name="Mymy"}
             };
 
-            BiblioList.ItemsSource = _bibliodata;
+            BiblioList.ItemsSource = _bibliodataList;
         }
     }
 }
