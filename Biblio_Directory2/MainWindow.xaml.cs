@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Biblio_Directory2.Resources;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,7 @@ namespace Biblio_Directory2
     /// </summary>
     public partial class MainWindow : Window
     {
+        private List<BiblioResources> _bibliodata;
         public MainWindow()
         {
             InitializeComponent();
@@ -27,7 +29,13 @@ namespace Biblio_Directory2
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            _bibliodata = new List<BiblioResources>()
+            {
+                new BiblioResources(){Book = "test"},
+                new BiblioResources(){Book = "ANNA KARENINA"} 
+            };
 
+            BiblioList.ItemsSource = _bibliodata;
         }
     }
 }

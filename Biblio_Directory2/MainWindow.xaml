@@ -9,9 +9,9 @@
     <Grid>
         <DataGrid x:Name="BiblioList" FontSize="16" FontWeight="Bold" Margin="10">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Book" Width="180"/>
-                <DataGridTextColumn Header="Pazzle" Width="180"/>
-                <DataGridTextColumn Header="Games" Width="180"/>
+                <DataGridTextColumn Binding="{Binding Path = Book}" Header="Book" Width="180"/>
+                <DataGridTextColumn Binding="{Binding Path = Puzzle}" Header="Puzzle" Width="180"/>
+                <DataGridTextColumn Binding="{Binding Path = Games}" Header="Games" Width="180"/>
 
             </DataGrid.Columns>
         </DataGrid>

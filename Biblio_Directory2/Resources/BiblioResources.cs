@@ -8,7 +8,12 @@ namespace Biblio_Directory2.Resources
 {
     class BiblioResources
     {
-        public string Book { get; set; }
+        private string _Text;
+        public string Book
+        {
+            get { return _Text; }
+            set { _Text = value; }
+        }
         public string Puzzle { get; set; }
         public string Games { get; set; }
     }
