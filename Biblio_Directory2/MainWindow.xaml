@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Biblio_Directory2"
         mc:Ignorable="d"
-        Title="BiblioApp" Height="450" Width="800">
+        Title="BiblioApp" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid>
         <DataGrid x:Name="BiblioList" FontSize="16" FontWeight="Bold" Margin="10">
             <DataGrid.Columns>
