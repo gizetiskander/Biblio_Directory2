@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Biblio_Directory2.Resources;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,18 @@ namespace Biblio_Directory2
     /// </summary>
     public partial class Book : Page
     {
+        private List<BiblioResources> _bibliodata;
         public Book()
         {
             InitializeComponent();
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            _bibliodata = new List<BiblioResources>()
+            {
+                new BiblioResources(){Text="AnnaKarenina"}
+            };
         }
     }
 }

@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:Biblio_Directory2"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Book" Height="450" Width="800">
+      Title="Book" Height="450" Width="800" Loaded="Page_Loaded">
     <Grid>
         <DataGrid x:Name="BiblioList" FontSize="16" FontWeight="Bold" Margin="10" AutoGenerateColumns="False">
             <DataGrid.Columns>
