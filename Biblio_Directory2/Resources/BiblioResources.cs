@@ -27,6 +27,8 @@ namespace Biblio_Directory2.Resources
             set { _Text = value; }
         }
 
+        public DateTime PublishingDate { get; set; } = DateTime.Now;
+
         public string Puzzle { get; set; }
         public string Games { get; set; }
     }
