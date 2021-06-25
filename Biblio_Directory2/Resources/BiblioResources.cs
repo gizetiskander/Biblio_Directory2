@@ -52,6 +52,7 @@ namespace Biblio_Directory2.Resources
 
         public DateTime PublishingDate { get; set; } = DateTime.Now;
 
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected virtual void OnPropertyChanged(string nameproperty = "")
