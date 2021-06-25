@@ -31,8 +31,11 @@ namespace Biblio_Directory2
         {
             _bibliodata = new List<BiblioResources>()
             {
-                new BiblioResources(){Text="AnnaKarenina"}
+                new BiblioResources(){Name="AnnaKarenina"},
+                new BiblioResources(){Name="Mymy"}
             };
+
+            BiblioList.ItemsSource = _bibliodata;
         }
     }
 }

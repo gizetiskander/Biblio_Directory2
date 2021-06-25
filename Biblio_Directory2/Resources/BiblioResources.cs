@@ -9,11 +9,24 @@ namespace Biblio_Directory2.Resources
     class BiblioResources
     {
         private string _Text;
-        public string Book
+        public string Name
         {
             get { return _Text; }
             set { _Text = value; }
         }
+
+        public string Author
+        {
+            get { return _Text; }
+            set { _Text = value; }
+        }
+
+        public string Publishing
+        {
+            get { return _Text; }
+            set { _Text = value; }
+        }
+
         public string Puzzle { get; set; }
         public string Games { get; set; }
     }
