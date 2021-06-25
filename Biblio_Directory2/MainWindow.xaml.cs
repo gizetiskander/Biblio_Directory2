@@ -36,6 +36,7 @@ namespace Biblio_Directory2
             };
 
             BiblioList.ItemsSource = _bibliodata;
+            
         }
     }
 }

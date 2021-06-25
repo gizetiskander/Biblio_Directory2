@@ -7,11 +7,11 @@
         mc:Ignorable="d"
         Title="BiblioApp" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid>
-        <DataGrid x:Name="BiblioList" FontSize="16" FontWeight="Bold" Margin="10">
+        <DataGrid x:Name="BiblioList" FontSize="16" FontWeight="Bold" Margin="10" AutoGenerateColumns="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Path = Book}" Header="Book" Width="180"/>
-                <DataGridTextColumn Binding="{Binding Path = Puzzle}" Header="Puzzle" Width="180"/>
-                <DataGridTextColumn Binding="{Binding Path = Games}" Header="Games" Width="180"/>
+                <DataGridTextColumn Binding="{Binding Path = Book}" IsReadOnly="False" Header="Book" Width="180"/>
+                <DataGridTextColumn Binding="{Binding Path = Puzzle}" IsReadOnly="False" Header="Puzzle" Width="180"/>
+                <DataGridTextColumn Binding="{Binding Path = Games}" IsReadOnly="False" Header="Games" Width="*"/>
 
             </DataGrid.Columns>
         </DataGrid>
