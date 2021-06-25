@@ -40,47 +40,17 @@ namespace Biblio_Directory2
             {
                 _bibliodataList = _fileServiceIO.LoadData();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                Close();
             }
 
+            _bibliodataList = new BindingList<BiblioResources>()
             {
-                new BiblioResources() { Name = "AnnaKarenina", Author = "LevTolstoy", Publishing = "Isdatelstvo" },
-                new BiblioResources() { Name = "Mymy" }
+                new BiblioResources() { Name = "AnnaKarenina", Author = "LevTolstoy", Publishing = "Isdatelstvo" }
             };
 
             BiblioList.ItemsSource = _bibliodataList;
-            _bibliodataList.ListChanged += _bibliodataList_ListChanged;
-        }
-
-        private void _bibliodataList_ListChanged(object sender, ListChangedEventArgs e)
-        {
-            switch(e.ListChangedType)
-            {
-                case ListChangedType.Reset:
-                    break;
-                case ListChangedType.ItemAdded:
-                    break;
-                case ListChangedType.ItemDeleted:
-                    break;
-                case ListChangedType.ItemMoved:
-                    break;
-                case ListChangedType.ItemChanged:
-                    break;
-                case ListChangedType.PropertyDescriptorAdded:
-                    break;
-                case ListChangedType.PropertyDescriptorChanged:
-                    break;
-                case ListChangedType.PropertyDescriptorDeleted:
-                    break;
-            }
-        }
-
-        private void Close()
-        {
-            throw new NotImplementedException();
         }
     }
 }

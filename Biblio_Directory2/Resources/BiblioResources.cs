@@ -17,19 +17,37 @@ namespace Biblio_Directory2.Resources
         public string Name
         {
             get { return _Name; }
-            set { _Name = value; }
+            set 
+            {
+                if (_Name == value)
+                    return;
+                _Name = value;
+                OnPropertyChanged("Name");
+            }
         }
 
         public string Author
         {
             get { return _Author; }
-            set { _Author = value; }
+            set 
+            {
+                if (_Author == value)
+                    return;
+                _Author = value;
+                OnPropertyChanged("Author");
+            }
         }
 
         public string Publishing
         {
             get { return _Publishing; }
-            set { _Publishing = value; }
+            set 
+            {
+                if (_Publishing == value)
+                    return;
+                _Publishing = value;
+                OnPropertyChanged("Publishing");
+            }
         }
 
         public DateTime PublishingDate { get; set; } = DateTime.Now;
