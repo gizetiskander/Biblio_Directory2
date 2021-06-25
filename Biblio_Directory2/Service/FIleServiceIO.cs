@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Biblio_Directory2.Resources;
+using Newtonsoft.Json;
 
 namespace Biblio_Directory2.Service
 {
@@ -15,14 +17,28 @@ namespace Biblio_Directory2.Service
         {
             Path = path;
         }
-        public List<BiblioResources> LoadData()
+        public BindingList<BiblioResources> LoadData()
         {
-            return null;
+            var fileExists = File.Exists(Path);
+            if (!fileExists)
+            {
+                File.CreateText(Path).Dispose();
+                return new BindingList<BiblioResources>();
+            }
+            using (var reader = File.OpenText(Path))
+            {
+                var fileText = reader.ReadToEnd();
+                return JsonConvert.DeserializeObject<BindingList<BiblioResources>>(fileText);
+            }
         }
 
-        public SaveData(List<BiblioResources> bibliodataList)
+        public void SaveData(List<BiblioResources> bibliodataList)
         {
-            using (StreamWriter wrieter = File.Create)
+            using (StreamWriter writer = File.CreateText(Path))
+            {
+                string output = JsonConvert.SerializeObject(bibliodataList);
+                writer.Write(output);
+            }
         }
     }
 }

@@ -1,6 +1,9 @@
 ﻿using Biblio_Directory2.Resources;
+using Biblio_Directory2.Service;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.Design;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,7 +24,9 @@ namespace Biblio_Directory2
     /// </summary>
     public partial class Book : Page
     {
-        private List<BiblioResources> _bibliodataList;
+        private string Path = $"{Environment.CurrentDirectory}\\bibliodataList.json";
+        private BindingList<BiblioResources> _bibliodataList;
+        private FIleServiceIO _fileServiceIO;
         public Book()
         {
             InitializeComponent();
@@ -29,13 +34,53 @@ namespace Biblio_Directory2
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            _bibliodataList = new List<BiblioResources>()
+            _fileServiceIO = new FIleServiceIO(Path);
+
+            try
             {
-                new BiblioResources(){Name="AnnaKarenina", Author = "LevTolstoy"},
-                new BiblioResources(){Name="Mymy"}
+                _bibliodataList = _fileServiceIO.LoadData();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                Close();
+            }
+
+            {
+                new BiblioResources() { Name = "AnnaKarenina", Author = "LevTolstoy", Publishing = "Isdatelstvo" },
+                new BiblioResources() { Name = "Mymy" }
             };
 
             BiblioList.ItemsSource = _bibliodataList;
+            _bibliodataList.ListChanged += _bibliodataList_ListChanged;
+        }
+
+        private void _bibliodataList_ListChanged(object sender, ListChangedEventArgs e)
+        {
+            switch(e.ListChangedType)
+            {
+                case ListChangedType.Reset:
+                    break;
+                case ListChangedType.ItemAdded:
+                    break;
+                case ListChangedType.ItemDeleted:
+                    break;
+                case ListChangedType.ItemMoved:
+                    break;
+                case ListChangedType.ItemChanged:
+                    break;
+                case ListChangedType.PropertyDescriptorAdded:
+                    break;
+                case ListChangedType.PropertyDescriptorChanged:
+                    break;
+                case ListChangedType.PropertyDescriptorDeleted:
+                    break;
+            }
+        }
+
+        private void Close()
+        {
+            throw new NotImplementedException();
         }
     }
 }
