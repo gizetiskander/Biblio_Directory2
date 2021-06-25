@@ -5,15 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Biblio_Directory2"
         mc:Ignorable="d"
-        Title="BiblioApp" Height="450" Width="800" Loaded="Window_Loaded">
+        Title="BiblioApp" Height="450" Width="800">
     <Grid>
-        <DataGrid x:Name="BiblioList" FontSize="16" FontWeight="Bold" Margin="10" AutoGenerateColumns="False">
-            <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Path = Book}" IsReadOnly="False" Header="Book" Width="180"/>
-                <DataGridTextColumn Binding="{Binding Path = Puzzle}" IsReadOnly="False" Header="Puzzle" Width="180"/>
-                <DataGridTextColumn Binding="{Binding Path = Games}" IsReadOnly="False" Header="Games" Width="*"/>
-
-            </DataGrid.Columns>
-        </DataGrid>
+        <Frame x:Name="Frame" Content="Главное Окно"/>
+        <Button Content="Перейти" HorizontalAlignment="Left" Margin="89,183,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="89,155,0,0" TextWrapping="Wrap" Text="Книги" VerticalAlignment="Top" Width="120" />
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="258,155,0,0" TextWrapping="Wrap" Text="Пазлы" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Перейти" HorizontalAlignment="Left" Margin="258,183,0,0" VerticalAlignment="Top" Width="75"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="450,155,0,0" TextWrapping="Wrap" Text="Настольные Игры" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Перейти" HorizontalAlignment="Left" Margin="450,183,0,0" VerticalAlignment="Top" Width="75"/>
     </Grid>
 </Window>

@@ -17,4 +17,5 @@ namespace Biblio_Directory2.Resources
         public string Puzzle { get; set; }
         public string Games { get; set; }
     }
+    
 }
